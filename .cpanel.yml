@@ -1,0 +1,5 @@
+---
+deployment:
+tasks:
+- export DEPLOYPATH=/home/brad9124/public_html/datakembang
+- /bin/cp -r * $DEPLOYPATH
