@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CustomersController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
@@ -19,6 +20,9 @@ use App\Http\Controllers\HomeController;
 //     return view('welcome');
 // });
 
+Route::get('/', [CustomersController::class, 'index']);
+Route::resource('/customers', CustomersController::class);
+
 Auth::routes();
 
-Route::get('/', [HomeController::class, 'index'])->name('home');
+Route::get('/home', [HomeController::class, 'index'])->name('home');
